@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#update {
+    color: green;
+    font-size: 30px;
+}
+
+[src=''] {
+    visibility: hidden;
+}
+
+</style>
+</head>
+<body>
+<header>
+      <h1>
+        Task 1: Weight Loss Challenge
+      </h1>
+    </header>
+
+<p>You are challenged to lose weight in this task. <br> To lose weight, 
+	click on the exercise button or the diet button.<br> You will need to click the buttons
+multiple times to meet the goal. <br> You will be informed once your goal is met. </p>
+
+<img id="chubImg" src="fatstickfigure.jpg" width="107" height="98">
+
+<p>Click the button to lose weight.</p>
+
+
+<button onclick="myFunction()">Exercise</button>
+<button onclick="myFunction()">Diet</button>
+
+<p id="update"></p>
+
+<img id="changed" src="" width="107" height="98">
+
+
+<p id="instructions"></p>
+
+<script>
+
+var num   = 0;
+var text  = "You met your weight loss goal!";
+var text0 = "Your making progress. Keep clicking!"
+var text1 = "Almost at your goal - keep clicking!"
+var str = "Click to proceed to the next task!";
+var result = str.link("task2instructions.html");
+
+function myFunction() {
+	num += 1;
+  if (num==12)
+    {document.getElementById("update").innerHTML= text0;}
+  if (num==35)
+    {document.getElementById("update").innerHTML= text1;}
+	if (num>50)
+    {document.getElementById("chubImg").src = "metgoal.jpg";
+     document.getElementById("update").innerHTML= text;
+     document.getElementById("changed").src = "runstickfigure.jpg";
+     document.getElementById("instructions").innerHTML = result;} 
+
+}
+
+
+</script>
+
+</body>
+</html>
